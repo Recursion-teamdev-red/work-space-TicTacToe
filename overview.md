@@ -7,6 +7,20 @@
 ## 構成
 
 ### フォルダ構成
+/project-root  
+├── /css  
+│   └── style.css  
+├── /js  
+│   ├── /game  
+│   │   ├── game.js  
+│   │   ├── win.js  
+│   │   ├── draw.js  
+│   │   ├── turn.js  
+│   │   └── endgame.js  
+│   └── ui.js  
+├── index.html  
+└── script.js  
+
 
 ### 各ファイルの役割
 
