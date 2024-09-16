@@ -7,6 +7,7 @@
 ## 構成
 
 ### フォルダ構成
+```
 /project-root  
 ├── /css  
 │   └── style.css  
@@ -20,6 +21,7 @@
 │   └── ui.js  
 ├── index.html  
 └── script.js  
+```
 
 
 ### 各ファイルの役割
