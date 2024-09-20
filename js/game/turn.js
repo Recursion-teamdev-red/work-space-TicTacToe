@@ -1,5 +1,7 @@
 // 現在のプレイヤーを示す変数。初期値は 'X'
 let currentPlayer = 'X';
+// 現在のターンを示す文字列を格納する要素
+let statusText = document.getElementById('statusText');
 
 /**
  * プレイヤーのターンを交代します。
@@ -8,6 +10,7 @@ let currentPlayer = 'X';
 function swapTurns() {
   // 現在のプレイヤーが 'X' の場合は 'O' に、そうでなければ 'X' に変更
   currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+  statusText.textContent = `${currentPlayer}'s Turn`;
 }
 
 /**

@@ -11,7 +11,7 @@ function initializeUI(handleClick, restartGame) {
 
     // 各セルにクリックイベントリスナーを追加
     cells.forEach(cell => {
-        cell.addEventListener('click', handleClick);
+        cell.addEventListener('click', handleClick, {once: true});
     });
 
     // リセットボタンにクリックイベントリスナーを追加

@@ -14,20 +14,21 @@ let isGameOver = false; // ゲームの終了状態を管理するフラグ
  */
 function handleClick(e) {
   // クリックされたセルを取得
-
-  // セルが既に埋まっている場合やゲームが終了している場合は処理を中断
-  
+  let cell = e.currentTarget;
 
   // 現在のプレイヤーのマークをセルに設定
-//   cell.textContent = getCurrentPlayer();
+  cell.textContent = getCurrentPlayer();
 
   // 勝利判定をチェック
   if (checkWin(getCurrentPlayer())) {
     // 勝利した場合の処理
+    endGame(false);
   } else if (isDraw()) {
     // 引き分けの場合の処理
+    endGame(true);
   } else {
     // 勝利も引き分けもない場合はターンを交代
+    swapTurns();
   }
 }
 
@@ -39,9 +40,15 @@ function restartGame() {
   isGameOver = false; // ゲーム終了フラグをリセット
 
   // セルの内容をクリア
-  　// メッセージエリアを取得
-  　// メッセージエリアを非表示
-  
+  cells.forEach(cell => {
+    cell.textContent = "";
+    cell.removeEventListener('click', handleClick);
+    cell.addEventListener('click', handleClick, {once: true});
+  })
+  // メッセージエリアを取得
+  const messageArea = document.getElementById('message');
+  // メッセージエリアを非表示
+  messageArea.style.display = "none";
 }
 
 // `handleClick` と `restartGame` を外部から使用できるようにエクスポート
