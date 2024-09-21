@@ -36,7 +36,7 @@ https://github.com/user-attachments/assets/ecb07b19-d44d-4a5b-9192-320cad93bb31
 1. リポジトリをクローンします。
 
     ```bash
-    git clone https://github.com/your-username/tic-tac-toe.git
+    git clone [https://github.com/your-username/tic-tac-toe.git](https://github.com/Recursion-teamdev-red/work-space-TicTacToe)
     ```
 
 2. 必要な依存関係はありませんので、`index.html`をブラウザで開くだけで動作します。
