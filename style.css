@@ -46,3 +46,7 @@ button {
     font-size: 1em;
     cursor: pointer;
 }
+
+.statusText{
+    margin: 1em;
+}
