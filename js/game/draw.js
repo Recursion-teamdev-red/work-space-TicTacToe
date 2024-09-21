@@ -4,7 +4,12 @@
  */
 function isDraw() {
   // すべてのセルが埋まっているかどうかを確認
-
+  const cells = document.querySelectorAll('[data-cell]');
+  let cellsFilled = true;
+  cells.forEach(cell => {
+    if(cell.textContent == "") cellsFilled = false;
+  });
+  return cellsFilled;
 }
 
 // `isDraw` 関数を外部から使用できるようにエクスポート

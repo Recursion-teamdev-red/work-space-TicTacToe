@@ -16,6 +16,11 @@ function handleClick(e) {
   // クリックされたセルを取得
   let cell = e.currentTarget;
 
+  // セルが既に埋まっている場合やゲームが終了している場合は処理を中断
+  if(cell.textContent != "" || isGameOver){
+    return;
+  }
+
   // 現在のプレイヤーのマークをセルに設定
   cell.textContent = getCurrentPlayer();
 
@@ -23,9 +28,11 @@ function handleClick(e) {
   if (checkWin(getCurrentPlayer())) {
     // 勝利した場合の処理
     endGame(false);
+    isGameOver = true;
   } else if (isDraw()) {
     // 引き分けの場合の処理
     endGame(true);
+    isGameOver = true;
   } else {
     // 勝利も引き分けもない場合はターンを交代
     swapTurns();
