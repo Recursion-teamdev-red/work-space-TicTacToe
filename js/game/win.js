@@ -19,8 +19,10 @@ function checkWin(player) {
   // すべての勝利条件の組み合わせをチェック
   return winningCombinations.some((combination) => {
     // 各組み合わせがすべて現在のプレイヤーのマークであるかをチェック
-    
-    　　// セルのインデックスを使用してセルの内容を取得し、現在のプレイヤーのマークと比較
+    return combination.every((index) => {
+      // セルのインデックスを使用してセルの内容を取得し、現在のプレイヤーのマークと比較
+      return document.querySelectorAll('[data-cell]')[index].textContent === player;
+    });
   });
 }
 
