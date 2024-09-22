@@ -12,12 +12,14 @@ function endGame(draw) {
 
   // 引き分けの場合の処理
   if (draw) {
-    // メッセージテキストを「Draw!」に設定
+    messageText.textContent = 'Draw!'; // メッセージテキストを「Draw!」に設定
   } else {
-    // 勝者がいる場合の処理　// 現在のプレイヤーが勝者としてメッセージを設定
+    // 勝者がいる場合の処理
+    messageText.textContent = `${getCurrentPlayer()} Wins!`; // 現在のプレイヤーが勝者としてメッセージを設定
   }
 
-  // メッセージ要素を表示　// メッセージを表示するためにスタイルを変更
+  // メッセージ要素を表示
+  messageElement.style.display = 'block'; // メッセージを表示するためにスタイルを変更
 }
 
 // `endGame` 関数を外部から使用できるようにエクスポート
